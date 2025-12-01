@@ -1,0 +1,11 @@
+header {
+    /* style */
+    background-color: #0d9b4d;
+    color: white;
+    margin-bottom: 2em;
+    display : flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
