@@ -1,0 +1,88 @@
+header {
+    /* style */
+    background-color: #0d9b4d;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 2em;
+    display : flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.espace {
+    width: 40px;
+    height:1px
+}
+
+.menu {
+    width: 40px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-size: clamp(1.2em, 5vw, 1.8em); 
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+.aligner {
+    position: relative;
+    display : flex;
+    flex-direction: column;
+}
+
+
+.haut {
+    position: relative;
+}
+
+.haut img {
+    width: 100%;
+    height: auto;
+}
+
+.haut h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding:0;
+    margin:0;
+
+    color: black;
+    font-size: clamp(1.2em, 5vw, 1.8em);
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+    white-space: nowrap;
+}
+
+.cote {
+    position: relative;
+}
+
+.cote img {
+    width: 100%;
+    height: auto;
+}
+
+.cote h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding:0;
+    margin:0;
+
+    color: black;
+    font-size: clamp(1.2em, 5vw, 1.8em);
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+    white-space: nowrap;
+}
