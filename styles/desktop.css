@@ -170,9 +170,11 @@ header {
 
 
 .grille-produits {
-    display: grid; /* Cette ligne crée 4 colonnes de largeur égale */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
+    display : flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    gap: 20px;  
     padding: 20px;
     align-items: stretch; 
 }
