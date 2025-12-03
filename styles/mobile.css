@@ -168,3 +168,47 @@ header h1 {
     transform: translateY(-11px) rotate(-45deg);
 }
 
+
+.rayon {
+    display : flex;
+    flex-direction: column;
+    justify-content:space-between;
+
+    position: relative;
+}
+
+.grille-produits {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    padding: 20px;
+}
+
+img {
+    width: 30px;
+    height: auto;
+}
+
+.carte-produit {
+    display : flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    gap: 20px; 
+    padding: 20px;
+
+    border-style: solid;
+}
+
+.selecteur-quantite {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.nom-produit {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
