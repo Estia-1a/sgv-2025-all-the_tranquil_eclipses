@@ -2,10 +2,31 @@ header {
     /* style */
     background-color: #0d9b4d;
     color: white;
+    font-size: 30px;
     margin-bottom: 2em;
-    display : flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
+    display: flex;
+    justify-content: center;
 }
+
+#haut {
+    text-align: center;
+}
+
+#haut img {
+    width: 80%;
+	height: auto;
+}
+
+
+.titre-sur-image {
+    position: absolute;
+    top: 50%;                /* placement vertical */
+    left: 50%;               /* placement horizontal */
+    transform: translate(-50%, -50%); /* centre exact */
+    color: black;            /* couleur du texte */
+    font-size: 5rem;
+    text-shadow: 0 0 10px white;  /* lisibilité sur l'image */
+    margin: 0;
+}
+
 
