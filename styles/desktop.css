@@ -8,13 +8,14 @@ header {
     justify-content: center;
 }
 
-#haut {
+.haut {
     text-align: center;
 }
 
-#haut img {
+.haut img {
     width: 80%;
 	height: auto;
+    border-radius: 10px;
 }
 
 
@@ -30,3 +31,35 @@ header {
 }
 
 
+.bas {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cote {
+    position: relative;
+    width: 45%;
+}
+
+.cote img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.cote h2 {
+    position: absolute;
+    bottom: 8%;       /* position du titre */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+    margin: 0;
+
+    white-space: nowrap;
+}
