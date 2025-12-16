@@ -94,7 +94,7 @@ header {
     width: 250px; 
     /* Définit la hauteur du menu (s'étend sur toute la hauteur restante de la fenêtre) */
     height: calc(100vh - 50px); 
-    background-color: #1e6107; /* Couleur de fond du menu */
+    background-color: #0d9b4d; /* Couleur de fond du menu */
     
     /* 🔑 Masquage initial : Le menu est décalé vers la gauche */
     transform: translateX(-100%); 
