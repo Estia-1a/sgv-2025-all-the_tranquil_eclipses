@@ -212,3 +212,47 @@ img {
     align-items: center;
     align-content: center;
 }
+
+
+.engagement-container {
+    margin: 10px;      /* On laisse un petit espace autour du bloc blanc */
+    padding: 20px;     /* On réduit l'espace interne (de 40px à 20px) */
+}
+
+h1 {
+    font-size: 1.5rem; /* On réduit la taille du titre principal */
+    text-align: left;  /* Parfois plus lisible à gauche sur mobile */
+}
+
+h2 {
+    font-size: 1.3rem; 
+    margin-top: 30px;  /* On réduit l'écart au dessus des titres */
+}
+
+p {
+    text-align: left;  /* IMPORTANT : La justification crée souvent de gros trous blancs sur petits écrans */
+    hyphens: auto;
+    font-size: 0.95rem; /* Texte légèrement plus petit pour la lisibilité */
+}
+
+.practice-list{
+    list-style: none;
+}
+
+.practice-list li {
+    padding: 12px;     /* On gagne de la place dans les blocs de pratiques */
+    text-align: left;
+    background: #f1f8f1;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.quote-box {
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #e8f4e5;
+    border-radius: 10px;
+    font-style: italic;
+    border: 1px dashed #3e7d37;
+    text-align: center;
+}

@@ -208,3 +208,65 @@ header {
     margin-top: auto;
     padding-top: 10px;
 }
+
+
+
+.engagement-container {
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+h2 {
+    color: #3e7d37;
+    border-left: 5px solid #3e7d37;
+    padding-left: 15px;
+    margin-top: 40px;
+}
+
+/* --- JUSTIFICATION DU TEXTE --- */
+p {
+    text-align: justify; /* Justifie le texte */
+    hyphens: auto;       /* Gère les coupures de mots pour éviter les grands espaces */
+    margin-bottom: 20px;
+}
+
+/* Liste des pratiques */
+.practice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.practice-list li {
+    background: #f1f8f1;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: justify; /* Justifie aussi le texte dans les listes */
+}
+
+/* Citation / Encadré */
+.quote-box {
+    background-color: #e8f4e5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    font-style: italic;
+    border: 1px dashed #3e7d37;
+    text-align: center;  /* On garde la citation centrée pour le style */
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 40px 0;
+}
+
+
+header{
+    margin-bottom: 0;
+}
