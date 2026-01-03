@@ -1,3 +1,17 @@
+/* Importation d'une police Google Fonts plus moderne */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #fdfcf9; /* Un blanc "cassé" plus chaleureux */
+    color: #2d2d2d;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Police avec empattement pour un look premium */
+    font-weight: 700;
+}
 header {
     /* style */
     background-color: #0d9b4d;
@@ -89,84 +103,119 @@ header h1 {
 }
 
 
-.menu-toggle {
-    /* La checkbox est complètement cachée */
-    display: none;
-}
-
+/* --- 1. Structure du Menu (Modernisé) --- */
 .nav-menu {
-    position: absolute;
-    top: 100%; /* Place le menu juste sous le bandeau */
+    position: fixed; /* Fixé pour éviter les problèmes de défilement */
+    top: 15px;
     left: 0;
-    width: 250px; 
-    /* Définit la hauteur du menu (s'étend sur toute la hauteur restante de la fenêtre) */
-    height: calc(100vh - 50px); 
-    background-color: #0d9b4d; /* Couleur de fond du menu */
+    width: 80%; /* Un peu plus large pour le confort */
+    max-width: 300px;
+    height: 100vh;
     
-    /* 🔑 Masquage initial : Le menu est décalé vers la gauche */
-    transform: translateX(-100%); 
-    transition: transform 0.3s ease-in-out; /* Animation pour une ouverture fluide */
-    z-index: 50; 
+    /* Effet Glassmorphism : Fond semi-transparent avec flou */
+    background: rgba(13, 155, 77, 0.95); 
+    backdrop-filter: blur(10px); 
     
-    /* Styles du contenu du menu */
-    padding-top: 20px;
+    /* Ombre douce pour la profondeur */
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+    
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0); /* Courbe d'animation plus fluide */
+    z-index: 50;
+    padding: 80px 20px 20px 20px; /* Plus d'espace en haut pour ne pas chevaucher le bouton */
+    box-sizing: border-box;
 }
 
 .nav-menu ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-bottom: 15px;
+    opacity: 0; /* Pour l'animation d'apparition */
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle {
+    /* La checkbox est complètement cachée */
+    display: none;
+}
+
+/* Animation séquentielle des liens quand le menu est ouvert */
+.menu-toggle:checked ~ .nav-menu li {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .nav-menu a {
     display: block;
-    padding: 10px 20px;
+    padding: 12px 15px;
     text-decoration: none;
     color: white;
-    font-size: 1.2em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: background 0.2s ease;
 }
 
-/* --- 2. Styles du Bouton Hamburger (Label) --- */
+/* Effet de survol discret */
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
 
+/* --- 2. Bouton Hamburger (Plus fin et élégant) --- */
 .hamburger-label {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 40px; 
-    height: 30px; 
+    justify-content: center;
+    gap: 6px; /* Espace constant entre les barres */
+    width: 34px; 
+    height: 34px;
     cursor: pointer;
-    padding: 5px; /* Petit padding pour rendre la zone de clic plus grande */
-    z-index: 60; /* Assure que le bouton reste cliquable au-dessus du menu */
+    z-index: 100;
+    padding:5px;
+    transition: transform 0.3s ease;
 }
 
 .bar {
     display: block;
     width: 100%;
-    height: 3px;
-    background-color: white; 
-    border-radius: 5px;
-    transition: all 0.3s;
+    height: 2px; /* Plus fin pour un look plus "pro" */
+    background-color: #ffff; /* Couleur rappelant le maraîcher si bandeau blanc */
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- 3. L'Interactivité : Ouverture du Menu --- */
+/* Changement de couleur du bouton quand le menu est ouvert */
+.menu-toggle:checked ~ .hamburger-label .bar {
+    background-color: white;
+}
 
-/* 🔑 L'opérateur ~ cible .nav-menu lorsque .menu-toggle est :checked */
+/* --- 3. Animations --- */
+
 .menu-toggle:checked ~ .nav-menu {
-    /* Ramène le menu en position visible */
-    transform: translateX(0); 
+    transform: translateX(0);
 }
 
-/* (Optionnel) Animation du burger en 'X' à l'ouverture */
+/* Animation du X plus fluide */
 .menu-toggle:checked ~ .hamburger-label .bar:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .menu-toggle:checked ~ .hamburger-label .bar:nth-child(2) {
-    opacity: 0; 
+    opacity: 0;
+    transform: scaleX(0);
 }
 
 .menu-toggle:checked ~ .hamburger-label .bar:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
 }
+
 
 
 .rayon {
