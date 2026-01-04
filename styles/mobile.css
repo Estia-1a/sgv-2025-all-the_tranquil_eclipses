@@ -348,40 +348,94 @@ header h1 {
     position: relative;
 }
 
+
 .grille-produits {
-    display : flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; 
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 60px;
+    padding: 30px;
 }
 
-img {
-    width: 30px;
-    height: auto;
-}
 
 .carte-produit {
-    display : flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    gap: 20px; 
+    background-color: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
     padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease; /* Préparation pour l'animation */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
 
-    border-style: solid;
+.carte-produit:hover {
+    transform: translateY(-10px); /* La carte s'élève au survol */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08); /* Ombre plus marquée au survol */
+    border-color: #b7e4c7; /* La bordure devient vert clair */
+}
+
+/* Style du nom du produit */
+.carte-produit h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #1b4332;
+    margin: 15px 0 10px 0;
+}
+
+.carte-produit .img-conteneur {
+    width: 100%;
+    height: 200px;
+    background-color: #fdfcf9;
+    border-radius:15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.carte-produit img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.carte-produit:hover img {
+    transform: scale(1.1); /* L'image zoome un peu au survol de la carte */
 }
 
 .selecteur-quantite {
+    margin-top: auto;
+    padding-top: 15px;
     display: flex;
-    align-items: center;
-    align-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.nom-produit {
-    display: flex;
-    align-items: center;
-    align-content: center;
+/* Style pour le prix (si vous avez une balise prix) */
+.prix {
+    font-weight: 700;
+    color: #0d9b4d;
+    font-size: 1.3rem;
+}
+
+/* Style pour un bouton "Ajouter" (si présent) */
+.btn-ajouter {
+    background-color: #0d9b4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-ajouter:hover {
+    background-color: #1b4332;
 }
 
 
@@ -398,6 +452,8 @@ h1 {
 h2 {
     font-size: 1.3rem; 
     margin-top: 30px;  /* On réduit l'écart au dessus des titres */
+    color: #3e7d37;
+    border-left: 5px solid #3e7d37;
 }
 
 p {
