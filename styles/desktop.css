@@ -12,18 +12,118 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif; /* Police avec empattement pour un look premium */
     font-weight: 700;
 }
-header {
-    /* style */
-    background-color: #0d9b4d;
-    color: white;
-    font-size: 30px;
-    margin-bottom: 2em;
-    display : flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
 
-    position: relative;
+header {
+    background-color: #1b4332;
+    color: white;
+    padding: 10px 40px; /* Ajout de padding pour aérer */
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Ombre légère sous le header */
+}
+
+/* --- FOOTER MODERNE --- */
+.site-footer {
+    background-color: #1b4332; /* Un vert plus foncé pour contraster avec le header */
+    color: white;
+    padding: 60px 20px 20px;
+    margin-top: 50px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* Pour le responsive */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #b7e4c7; /* Vert clair pour les titres du footer */
+    margin-bottom: 20px;
+    border: none; /* On enlève les bordures vertes de votre CSS global */
+    padding: 0;
+}
+
+.footer-column p, .footer-column a {
+    color: #d8f3dc;
+    text-decoration: none;
+    line-height: 1.6;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+/* Style des horaires */
+.opening-hours {
+    list-style: none;
+    padding: 0;
+}
+
+.opening-hours li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+/* Réseaux sociaux */
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Bas du footer */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Adaptation Mobile rapide */
+@media (max-width: 767px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .opening-hours li {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
 }
 
 .espace {
@@ -37,27 +137,10 @@ header {
     margin-left: 2em;
 }
 
-.haut {
-    text-align: center;
-    position: relative;
-}
-
-.haut img {
-    width: 80%;
-	height: auto;
-    border-radius: 10px;
-}
-
-
-.titre-sur-image {
-    position: absolute;
-    top: 50%;                /* placement vertical */
-    left: 50%;               /* placement horizontal */
-    transform: translate(-50%, -50%); /* centre exact */
-    color: black;            /* couleur du texte */
-    font-size: 5rem;
-    text-shadow: 0 0 10px white;  /* lisibilité sur l'image */
-    margin: 0;
+.aligner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 
@@ -66,33 +149,99 @@ header {
     gap: 30px;
     justify-content: center;
     margin-top: 20px;
+    align-items: stretch;
+}
+
+
+/* Style pour les blocs d'images (haut et cote) */
+.haut {
+    position: relative;     /* Crucial pour que les titres se fixent dessus */
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.haut img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
 }
 
 .cote {
     position: relative;
-    width: 45%;
+    width: 49%;
+    height: auto;    /* FIXE LA HAUTEUR : ajuste cette valeur selon tes envies */
+    overflow: hidden; /* Important pour le zoom au survol */
+    border-radius: 20px;
 }
+
 
 .cote img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
-    border-radius: 10px;
+    transition: transform 0.5s ease;
+    object-fit: cover; /* TRÈS IMPORTANT : Recadre l'image proprement sans la déformer */
 }
 
-.cote h2 {
+.haut h2, .cote h2 {
     position: absolute;
-    bottom: 8%;       /* position du titre */
+    bottom: 15%;            /* Ajusté pour être bien sur l'image en bas */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white !important;
+    font-size: 2.5rem;      /* Taille ajustée pour desktop */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    margin: 0;
+    z-index: 10;
+    white-space: normal;
+    text-align: center;
+    border: none !important;
+    padding: 0 !important;
+}
+
+
+
+
+/* Effet au survol : la carte se lève et l'image zoome */
+.haut:hover, .cote:hover {
+    transform: translateY(-5px); /* La carte monte un peu */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.haut:hover img, .cote:hover img {
+    transform: scale(1.05); /* L'image zoome légèrement */
+}
+
+
+
+.titre-sur-image {
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: black;
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 0 0 10px white;
-    margin: 0;
-
-    white-space: nowrap;
+    color: white !important;
+    
+    /* Le texte fera au minimum 2rem et au maximum 5rem, 
+       en s'adaptant à la largeur de l'écran (8vw) */
+    font-size: clamp(2rem, 8vw, 5rem); 
+    
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
+    width: 90%;          /* Empêche le titre de toucher les bords de l'image */
+    text-align: center;  /* Centre le texte s'il passe sur deux lignes */
+    z-index: 10;
 }
+
+
+
+
+
+
 
 
 /* --- 1. Structure du Menu (Modernisé) --- */

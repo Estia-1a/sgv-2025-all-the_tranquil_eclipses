@@ -12,17 +12,16 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif; /* Police avec empattement pour un look premium */
     font-weight: 700;
 }
+
 header {
-    /* style */
     background-color: #0d9b4d;
     color: white;
-    font-size: 30px;
-    margin-bottom: 2em;
-    display : flex;
-    flex-direction: row;
-    justify-content:space-between;
+    padding: 10px 40px; /* Ajout de padding pour aérer */
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Ombre légère sous le header */
 }
 
 .espace {
@@ -53,54 +52,74 @@ header h1 {
 
 
 .haut {
-    position: relative;
-}
-
-.haut img {
+    position: relative;     /* Crucial pour que les titres se fixent dessus */
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: block;
     width: 100%;
     height: auto;
+    transition: transform 0.5s ease;
 }
 
-.haut h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
-    padding:0;
-    margin:0;
 
-    color: black;
-    font-size: clamp(1.2em, 5vw, 1.8em);
-    font-weight: bold;
-    text-shadow: 0 0 10px white;
-    white-space: nowrap;
-}
 
 .cote {
     position: relative;
+    width: 100%;
+    overflow: hidden; /* Important pour le zoom au survol */
+    border-radius: 20px;
+    padding-bottom: 30px;
 }
 
-.cote img {
+.haut img, .cote img {
+    display: block;
     width: 100%;
     height: auto;
+    transition: transform 0.5s ease;
 }
 
-.cote h2 {
+.haut h2, .cote h2 {
     position: absolute;
-    top: 50%;
+    bottom: 15%;            /* Ajusté pour être bien sur l'image en bas */
     left: 50%;
-    transform: translate(-50%, -50%);
-
-    padding:0;
-    margin:0;
-
-    color: black;
-    font-size: clamp(1.2em, 5vw, 1.8em);
-    font-weight: bold;
-    text-shadow: 0 0 10px white;
+    transform: translateX(-50%);
+    color: white !important;
+    font-size: 2rem;      /* Taille ajustée pour mobile */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    margin: 0;
+    z-index: 10;
     white-space: nowrap;
+    border: none !important;
+    padding: 0 !important;
 }
+
+/* Effet au survol : la carte se lève et l'image zoome */
+.haut:hover, .cote:hover {
+    transform: translateY(-5px); /* La carte monte un peu */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.haut:hover img, .cote:hover img {
+    transform: scale(1.05); /* L'image zoome légèrement */
+}
+
+
+
+.titre-sur-image {
+    position: absolute;
+    top: 50%;                /* placement vertical au milieu */
+    left: 50%;               /* placement horizontal */
+    transform: translate(-50%, -50%); 
+    color: white !important; 
+    font-size: 3rem;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.8); /* Ombre pour la lisibilité */
+    margin: 0;
+    z-index: 10;            /* Force le titre à rester au-dessus */
+    padding: 0 !important;
+}
+
 
 
 /* --- 1. Structure du Menu (Modernisé) --- */
