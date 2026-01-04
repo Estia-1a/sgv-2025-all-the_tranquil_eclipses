@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="styles/desktop.css" media="screen and (min-width: 768px)"> 
     <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 767px)"> 
-    <title>Document</title>
+    <title>Connexion - Maraîcher de Bidart</title>
 </head>
 <body>
     <header>
-            
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
-
         <label for="menu-toggle" class="hamburger-label" aria-label="Ouvrir le menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -27,35 +24,47 @@
                 <li><a href="histoire.html">Notre Histoire</a></li>
                 <li><a href="me_connecter.html">Me connecter</a></li>
                 <li><a href="panier.html">Mon Panier</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
-        <h1>Maraicher de Bidart</h1>
-
+        <h1>Maraîcher de Bidart</h1>
         <div class="espace"></div>
     </header>
 
-    <section class="aligner">
-        <div class="haut">
-            <a href="fruits_legumes.html"><h2 class="titre-sur-image">Nos Fruits et Légumes</h2></a>
-            <img src="media/pictures/fruits_legumes.jpg" alt="image fruits et légumes">
-        </div>
+    <main class="engagement-container login-page">
+        <div class="login-card">
+            <h2>Espace Client</h2>
+            <p class="login-intro">Connectez-vous pour gérer vos commandes et vos abonnements aux paniers de légumes.</p>
+            
+            <form action="#" method="POST" class="login-form">
+                <div class="form-group">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                </div>
 
-        <div class="bas">
-            <div class="cote">
-                <a href="pratiques_durables.html"><h2>Nos Pratiques Durables</h2></a>
-                <img src="media/pictures/pratiques_durables.jpg" alt="image pratiques durables">
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Se souvenir de moi
+                    </label>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+
+                <button type="submit" class="btn-login">Se connecter</button>
+            </form>
+
+            <div class="login-footer">
+                <p>Pas encore de compte ? <a href="#">Créer un compte</a></p>
             </div>
-
-            <div class="cote">
-                <a href="histoire.html"><h2>Notre histoire</h2></a>
-                <img src="media/pictures/histoire_1.jpg" alt="image histoire">
-            </div>
         </div>
-    </section>
+    </main>
 
-
-    <footer id="contact" class="site-footer">
+        <footer id="contact" class="site-footer">
     <div class="footer-container">
         <div class="footer-column">
             <h3>Contact</h3>
@@ -83,7 +92,7 @@
     <div class="footer-bottom">
         <p>&copy; 2024 Maraîcher de Bidart - Tous droits réservés</p>
     </div>
-</footer>
+    </footer>
 
-</body>
+    </body>
 </html>

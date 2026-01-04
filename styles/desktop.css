@@ -369,43 +369,96 @@ header {
 
 .grille-produits {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
-    align-items: stretch;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 30px;
 }
 
 
 .carte-produit {
     background-color: white;
-    border: 1px solid #000;
-    border-radius: 10px;
-    padding: 15px;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     height: 100%;
+    transition: all 0.3s ease; /* Préparation pour l'animation */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.carte-produit:hover {
+    transform: translateY(-10px); /* La carte s'élève au survol */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08); /* Ombre plus marquée au survol */
+    border-color: #b7e4c7; /* La bordure devient vert clair */
+}
+
+/* Style du nom du produit */
+.carte-produit h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #1b4332;
+    margin: 15px 0 10px 0;
 }
 
 .carte-produit .img-conteneur {
     width: 100%;
-    height: 180px;
+    height: 200px;
+    background-color: #fdfcf9;
+    border-radius:15px;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .carte-produit img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.carte-produit:hover img {
+    transform: scale(1.1); /* L'image zoome un peu au survol de la carte */
 }
 
 .selecteur-quantite {
     margin-top: auto;
-    padding-top: 10px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
+
+/* Style pour le prix (si vous avez une balise prix) */
+.prix {
+    font-weight: 700;
+    color: #0d9b4d;
+    font-size: 1.3rem;
+}
+
+/* Style pour un bouton "Ajouter" (si présent) */
+.btn-ajouter {
+    background-color: #0d9b4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-ajouter:hover {
+    background-color: #1b4332;
+}
+
+
+
+
 
 
 
@@ -467,4 +520,106 @@ p {
 
 header{
     margin-bottom: 10px;
+}
+
+
+
+/* --- PAGE CONNEXION --- */
+.login-page {
+    max-width: 500px; /* La carte de connexion est plus étroite */
+    margin: 60px auto;
+    text-align: center;
+}
+
+.login-card h2 {
+    border-left: none; /* On centre le titre sans la barre verte pour ce cas précis */
+    padding-left: 0;
+    text-align: center;
+    margin-top: 0;
+    font-size: 2.2rem;
+    color: #1b4332;
+}
+
+.login-intro {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.login-form {
+    text-align: left; /* Les labels du formulaire restent à gauche */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2d2d2d;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box; /* Important pour que le padding ne dépasse pas */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0d9b4d;
+    box-shadow: 0 0 0 3px rgba(13, 155, 77, 0.1);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+.remember-me {
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #0d9b4d;
+    text-decoration: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: #0d9b4d;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #1b4332;
+}
+
+.login-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.login-footer a {
+    color: #0d9b4d;
+    font-weight: 700;
+    text-decoration: none;
 }

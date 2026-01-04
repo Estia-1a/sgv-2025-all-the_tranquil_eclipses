@@ -14,7 +14,7 @@ h1, h2, h3 {
 }
 
 header {
-    background-color: #0d9b4d;
+    background-color: #1b4332;
     color: white;
     padding: 10px 40px; /* Ajout de padding pour aérer */
     margin-bottom: 30px;
@@ -23,6 +23,109 @@ header {
     align-items: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Ombre légère sous le header */
 }
+
+/* --- FOOTER MODERNE --- */
+.site-footer {
+    background-color: #1b4332; /* Un vert plus foncé pour contraster avec le header */
+    color: white;
+    padding: 60px 20px 20px;
+    margin-top: 50px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* Pour le responsive */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #b7e4c7; /* Vert clair pour les titres du footer */
+    margin-bottom: 20px;
+    border: none; /* On enlève les bordures vertes de votre CSS global */
+    padding: 0;
+}
+
+.footer-column p, .footer-column a {
+    color: #d8f3dc;
+    text-decoration: none;
+    line-height: 1.6;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+/* Style des horaires */
+.opening-hours {
+    list-style: none;
+    padding: 0;
+}
+
+.opening-hours li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+/* Réseaux sociaux */
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Bas du footer */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Adaptation Mobile rapide */
+@media (max-width: 767px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .opening-hours li {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
 
 .espace {
     width: 40px;
@@ -323,4 +426,107 @@ p {
     font-style: italic;
     border: 1px dashed #3e7d37;
     text-align: center;
+}
+
+
+
+
+/* --- PAGE CONNEXION --- */
+.login-page {
+    max-width: 500px; /* La carte de connexion est plus étroite */
+    margin: 60px auto;
+    text-align: center;
+}
+
+.login-card h2 {
+    border-left: none; /* On centre le titre sans la barre verte pour ce cas précis */
+    padding-left: 0;
+    text-align: center;
+    margin-top: 0;
+    font-size: 2.2rem;
+    color: #1b4332;
+}
+
+.login-intro {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.login-form {
+    text-align: left; /* Les labels du formulaire restent à gauche */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2d2d2d;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box; /* Important pour que le padding ne dépasse pas */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0d9b4d;
+    box-shadow: 0 0 0 3px rgba(13, 155, 77, 0.1);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+.remember-me {
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #0d9b4d;
+    text-decoration: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: #0d9b4d;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #1b4332;
+}
+
+.login-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.login-footer a {
+    color: #0d9b4d;
+    font-weight: 700;
+    text-decoration: none;
 }
